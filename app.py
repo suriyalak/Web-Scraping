@@ -1,12 +1,12 @@
 import streamlit as st
+
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt 
+import seaborn as sns
+from sklearn.cluster import KMeans 
+from sklearn.metrics import silhouette_score
+from sklearn.preprocessing import MinMaxScaler
 
-st.write("สวัสดี สุริยาลักษณ์")
-
-df = pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-})
-
-df
+iris = pd.read_csv("IRIS.csv")
+x = iris.iloc[:, [0, 1, 2, 3]].values
